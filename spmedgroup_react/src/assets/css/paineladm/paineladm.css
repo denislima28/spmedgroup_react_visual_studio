@@ -1,0 +1,90 @@
+.painel_adm{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma;
+    background-color: #033269;
+    font-size: 1.1em;
+    text-decoration: none; 
+}
+
+/* Deixa o fundo azul */
+
+.logotipo{
+    margin-left: 1%;
+    margin-top: 1%
+}
+
+h1{
+    font-size: 2.5em;
+    color: white;
+    margin-top: -4%;
+    margin-left: 35%;
+    line-height: 1.2;
+    padding: 0em 1em 0em 1em;
+}
+
+.botao_sair input{
+    background: #B51010;
+    color: #fff;
+    float: right;
+}
+
+.menus{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h2{
+    margin-top: 3em;
+    color: white;
+    padding: 0em 1em 0em 1em;
+    background-color: #0029BC;
+}
+
+.submenus ul{
+    list-style-type: none;
+}/*Tira os pontos pretos dos itens do submenu.*/
+
+.submenus ul li{
+    padding: 0.1em 0.1em;
+    text-align: right;
+}/*regula o espaço entre os itens do submenu*/
+
+.submenus ul a{
+    color: black; /*Cor das letras*/
+    text-decoration: none; /*Tira o azul e o sublinhado dos itens da lista*/
+    font-size: 0.7em;
+    padding: 0.1em 0.1em; /*Aumenta a área clicável*/
+    background: #83BEDF;/* pode ser usado para visualizar resultados de comandos, não no código final */
+    /*background: red;   Usado para verificar o espaço da área clicável*/
+}/*Serve para várias páginas*/
+
+.submenus ul :hover{
+    background: #49D06A;
+} 
+/*O fundo sobre o qual a palavra está só fica dessa cor quando passa o mouse.*/
+
+.submenus ul a:hover{
+    color: white;
+} /*Muda a cor da letra quando passo o mouse por cima*/
+
+.menu_clinica ul{
+    list-style-type: none; /*Tira o ponto do item.*/
+    margin-top: -1em; /*alinha a palavra CLÍNICAS em relação ao LISTAR e CADASTRAR*/
+}
+
+
+.menu_clinica ul a{
+    color: white; /*Cor das letras*/
+    text-decoration: none; /*Tira o azul e o sublinhado dos itens da lista*/
+    font-size: 0.8em;
+    
+    background:#0029BC;/* pode ser usado para visualizar resultados de comandos, não no código final */
+    /*background: red;   Usado para verificar o espaço da área clicável*/
+}/*Serve para várias páginas*/
+
+
+.menu_clinica ul :hover{
+    background: #49D06A;
+} 

@@ -1,0 +1,122 @@
+efetuaLogin(event)
+    {
+      event.preventDefault();
+
+      Axios.post('http://localhost:5000/api/login',
+        {
+          email : this.state.email,
+          senha : this.state.senha
+        })
+        .then(data => {
+          if(data.status === 200){
+              console.log(data);
+              localStorage.setItem("usuario_spmedgroup", data.data.token);
+              //Verifica o tipo de usuário e redireciona para a página default
+              console.log(parseJwt().Role);
+              if(parseJwt().Role == "ADM"){
+                this.props.history.push("/paineladm"); //assim que o login for feito, redireciona para outra página
+                console.log(data);
+              } else {
+                this.props.history.push("/clientes");
+              }
+              
+          } 
+      })
+      .catch(erro => {
+          this.setState({ erroMensagem : 'Email ou senha inválido'});
+      })
+	}
+
+
+
+
+//ASSIM, O LOGIN É FEITO
+
+efetuaLogin(event)
+    {
+      event.preventDefault();
+
+      Axios.post('http://localhost:5000/api/login',
+        {
+          email : this.state.email,
+          senha : this.state.senha
+        })
+        .then(data =>{
+          localStorage.setItem("usuario_spmedgroup", data.data.token); //armazena informações, dos visitantes, que serão utilizadas posteriormente. Por exemplo, as buscas feitas no site
+          this.props.history.push('/paineladm'); //assim que o login for feito, redireciona para outra página
+          console.log(data);
+        })
+        // .catch(erro => {
+        //     console.log(erro);
+        // })
+
+    }
+
+
+
+efetuar login com gerar token
+
+efetuaLogin(event)
+    {
+      event.preventDefault();
+
+      let email = this.state.email;
+      let senha = this.state.senha;
+
+      console.log(email);
+      console.log(senha);
+
+      Axios.post('http://localhost:5000/api/login',
+        {
+          email : email,
+          senha : senha
+        },
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+        )
+        .then(data =>{
+          localStorage.setItem("usuario_spmedgroup", data.data.token); //armazena informações, dos visitantes, que serão utilizadas posteriormente. Por exemplo, as buscas feitas no site
+          this.props.history.push('/paineladm'); //assim que o login for feito, redireciona para outra página
+          console.log(data);
+        })
+        // .catch(erro => {
+        //     console.log(erro);
+        // })
+
+    }
+
+
+
+ISSO PODE SER ÚTIL PARA PEGAR O TOKEN
+
+gerarToken(event) {
+    event.preventDefault();
+
+    let _email = this.state.email;
+    let _senha = this.state.senha;
+
+    console.log(_email);
+    console.log(_senha);
+
+    Axios.post(
+      "http://localhost:5000/api/login",
+      {
+        email: _email,
+        senha: _senha
+      },
+      {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    )
+      .then(data => {
+        localStorage.setItem("spmedicalgroup-usuario", data.data.token);
+        this.props.history.push("/minhasconsultas");
+      })
+      .catch(erro => console.log(erro));
+
+  }

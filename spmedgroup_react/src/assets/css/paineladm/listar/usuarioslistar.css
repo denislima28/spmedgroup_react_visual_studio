@@ -1,0 +1,29 @@
+.usuarios_listar{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma;
+    background-color:#033269;
+    font-size: 1.1em; 
+  }
+  
+  /* Deixa o fundo azul */
+  
+.usuarios_listar_logotipo{
+    margin-left: 1%;
+    margin-top: 1%;
+  }
+
+  h1{
+    font-size: 2.5em;
+    color: white;
+    margin-top: -4%;
+    margin-left: 35%;
+    line-height: 1.2;
+    padding: 0em 1em 0em 1em;
+}
+
+#lista_usuarios{
+  color: white;
+}
+/*Aqui é usada a cerquilha em vez do ponto porque o lista_consultas é uma id.*/
