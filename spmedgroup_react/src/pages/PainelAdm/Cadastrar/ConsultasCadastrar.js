@@ -37,6 +37,8 @@ class ConsultasCadastrar extends Component{
     }
     
     cadastrarConsultas(event) {
+        //O cadastro funciona, mas, por enquanto, apenas colocando os IDs do paciente e do médico.
+        
         event.preventDefault();
         
         let consultas = {
@@ -47,7 +49,7 @@ class ConsultasCadastrar extends Component{
         };
 
 
-        Axios.post('http://localhost:5000/api/consultas', consultas,
+        Axios.post('http://192.168.3.70:5000/api/consultas', consultas,
         {
             headers: {
               'Content-Type': 'application/json',
@@ -58,6 +60,11 @@ class ConsultasCadastrar extends Component{
         .then(res => {
             let consultas = res.data;
             this.setState({ lista_consultas : consultas});
+            alert("Consulta cadastrada");
+        })
+        .catch(erro => {
+             console.log(erro);
+             alert("Erro. Consulta não cadastrada");
         })  
         
         console.log(consultas);
@@ -73,6 +80,8 @@ class ConsultasCadastrar extends Component{
                 </div>
         
                 <h1>Painel do Administrador</h1>
+
+                O cadastro funciona, mas, por enquanto, apenas colocando os IDs do paciente e do médico.
 
                 <div className="formulario_cadastrar_consultas">
                     <form onSubmit={this.cadastrarConsultas.bind(this)}>
@@ -98,7 +107,7 @@ class ConsultasCadastrar extends Component{
                             </select>       
                         </div>
 
-            {/* O cadastro funciona, mas, por enquanto, apenas colocando os IDs do paciente e do médico. */}
+                        {/* Talvez colocar o option value nos itens abaixo também */}
 
                         <div className="margens_cadastrar_consultas">
                             Médico    <input
@@ -115,14 +124,9 @@ class ConsultasCadastrar extends Component{
                             onChange={this.atualizaEstadoIdProntuarioPaciente.bind(this)} required>
                             </input>       
                         </div>
-                        
-                        {/* <div className="botao_cadastrar_consultas"> */}
-                            
-                            {/* <input type="button" value="CADASTRAR-SE"></input> */}
 
                             <button type="submit" className="botao_cadastrar">CADASTRAR CONSULTA</button>
-                            
-                        {/* </div> */}
+                       
                     </form>
                 </div>
 

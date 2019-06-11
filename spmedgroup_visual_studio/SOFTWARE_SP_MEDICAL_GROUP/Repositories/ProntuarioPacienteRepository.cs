@@ -40,11 +40,18 @@ namespace SOFTWARE_SP_MEDICAL_GROUP.Repositories
             }
         }
 
-        public List<ProntuariosPacientes> ListarProntuariosPacientes()
+        public List<ProntuariosPacientes> ListarProntuariosPacientes(int idusuario, string tipousuario)
         {
             using (SpmedgroupContext ctx = new SpmedgroupContext())
+            //Todos os usuários conseguem acessar a página da lista dos pacientes, mas apenas quem for ADM consegue ver a lista.
             {
-                return ctx.ProntuariosPacientes.ToList();
+                if (tipousuario == "ADM")
+                {
+                    return ctx.ProntuariosPacientes.ToList();
+                    //O include é necessário para que o sistema mostre os nomes do paciente e do médico em vez dos ids deles.
+                }
+
+                return null;
             }
         }
     }

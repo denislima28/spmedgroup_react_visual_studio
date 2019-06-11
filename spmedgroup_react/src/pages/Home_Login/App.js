@@ -32,7 +32,7 @@ export default class App extends Component {
       
       // alert(this.state.email + " - " + this.state.senha);
 
-      Axios.post('http://localhost:5000/api/login', {
+      Axios.post('http://192.168.3.70:5000/api/login', {
          email : this.state.email,
          senha: this.state.senha
       })

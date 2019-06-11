@@ -12,7 +12,7 @@ namespace SOFTWARE_SP_MEDICAL_GROUP.Interfaces
 
         void Alterar(ProntuariosPacientes prontuariopaciente); //Com a framework, não precisa passar o ID nesse método.
 
-        List<ProntuariosPacientes> ListarProntuariosPacientes();
+        List<ProntuariosPacientes> ListarProntuariosPacientes(int idusuario, string tipousuario);
 
         void Deletar(int Id);
     }

@@ -12,7 +12,7 @@ namespace SOFTWARE_SP_MEDICAL_GROUP.Interfaces
 
         void Alterar(Medicos medico); //Com a framework, não precisa passar o ID nesse método.
 
-        List<Medicos> ListarMedicos();
+        List<Medicos> ListarMedicos(int idusuario, string tipousuario);
 
         void Deletar(int Id);
     }

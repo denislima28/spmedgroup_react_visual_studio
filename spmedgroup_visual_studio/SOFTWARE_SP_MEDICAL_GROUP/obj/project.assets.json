@@ -12650,11 +12650,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\36864133885\\Desktop\\SEMESTRE_DOIS\\sprint_quatro\\SP_MEDICAL_GROUP\\spmedgroup\\SOFTWARE_SP_MEDICAL_GROUP\\SOFTWARE_SP_MEDICAL_GROUP.csproj",
+      "projectUniqueName": "C:\\Users\\36864133885\\Desktop\\SEMESTRE_DOIS\\sprint_quatro\\SP_MEDICAL_GROUP\\spmedgroup_visual_studio\\SOFTWARE_SP_MEDICAL_GROUP\\SOFTWARE_SP_MEDICAL_GROUP.csproj",
       "projectName": "SOFTWARE_SP_MEDICAL_GROUP",
-      "projectPath": "C:\\Users\\36864133885\\Desktop\\SEMESTRE_DOIS\\sprint_quatro\\SP_MEDICAL_GROUP\\spmedgroup\\SOFTWARE_SP_MEDICAL_GROUP\\SOFTWARE_SP_MEDICAL_GROUP.csproj",
+      "projectPath": "C:\\Users\\36864133885\\Desktop\\SEMESTRE_DOIS\\sprint_quatro\\SP_MEDICAL_GROUP\\spmedgroup_visual_studio\\SOFTWARE_SP_MEDICAL_GROUP\\SOFTWARE_SP_MEDICAL_GROUP.csproj",
       "packagesPath": "C:\\Users\\36864133885\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\36864133885\\Desktop\\SEMESTRE_DOIS\\sprint_quatro\\SP_MEDICAL_GROUP\\spmedgroup\\SOFTWARE_SP_MEDICAL_GROUP\\obj\\",
+      "outputPath": "C:\\Users\\36864133885\\Desktop\\SEMESTRE_DOIS\\sprint_quatro\\SP_MEDICAL_GROUP\\spmedgroup_visual_studio\\SOFTWARE_SP_MEDICAL_GROUP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

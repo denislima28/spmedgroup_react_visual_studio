@@ -1,4 +1,5 @@
-﻿using SOFTWARE_SP_MEDICAL_GROUP.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using SOFTWARE_SP_MEDICAL_GROUP.Domains;
 using SOFTWARE_SP_MEDICAL_GROUP.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -40,11 +41,19 @@ namespace SOFTWARE_SP_MEDICAL_GROUP.Repositories
             }
         }
 
-        public List<Medicos> ListarMedicos()
+        public List<Medicos> ListarMedicos(int idusuario, string tipousuario) //parâmetros necessários para distinguir usuários
+        //Todos os usuários conseguem acessar a página que lista os médicos, mas apenas os ADMs conseguirão ver a lista.
         {
             using (SpmedgroupContext ctx = new SpmedgroupContext())
             {
-                return ctx.Medicos.ToList();
+                if (tipousuario == "ADM")
+                {
+                    return ctx.Medicos.Include(x => x.IdEspecialidadeNavigation).ToList();
+                    //O include é necessário para que o sistema mostre o nomes da especialidade em vez do id dela.
+                }
+
+                return null;
+
             }
         }
     }

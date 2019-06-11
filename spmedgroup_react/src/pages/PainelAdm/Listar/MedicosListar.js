@@ -15,7 +15,7 @@ class MedicosListar extends Component
     
     
     buscarMedicos (){
-        Axios.get('http://localhost:5000/api/medicos',
+        Axios.get('http://192.168.3.70:5000/api/medicos',
         {
             headers: {
               'Content-Type': 'application/json',
@@ -24,21 +24,21 @@ class MedicosListar extends Component
         }
         )
         .then(res => {
-            const consultas = res.data;
+            const medicos = res.data;
             this.setState({ lista_medicos : medicos});
         })      
     }
 
     componentDidMount(){
-        this.buscarConsultas();
+        this.buscarMedicos();
     }
 
     
     render() {
         return (
         
-        <main className="consultas_listar">
-            <div className="consultas_listar_logotipo">
+        <main className="medicos_listar">
+            <div className="medicos_listar_logotipo">
                 <img src={logotipo} />
             </div>
     
@@ -54,21 +54,23 @@ class MedicosListar extends Component
                         <th>CRM</th>
                         <th>Endereço</th>
                         <th>Telefone</th>
-                        <th>Paciente</th>
+                        <th>Especialidade</th>
                         </tr>
                     </thead>
 
-                    <tbody id="tabela_lista_consultas">
+                    <tbody id="tabela_lista_medicos">
                     {
-                        this.state.lista_consultas.map(function(todas_consultas){
+                        this.state.lista_medicos.map(function(todos_medicos){
                             return(
-                                <tr key={todas_consultas.id}>
-                                    <td>{todas_consultas.id}</td>
-                                    <td>{todas_consultas.dataConsulta}</td>
-                                    <td>{todas_consultas.situacao}</td>
-                                    <td>{todas_consultas.descricao}</td>
-                                    <td>{todas_consultas.idMedicoNavigation.nome}</td>
-                                    <td>{todas_consultas.idProntuarioPacienteNavigation.nome}</td>
+                                <tr key={todos_medicos.id}>
+                                    <td>{todos_medicos.id}</td>
+                                    <td>{todos_medicos.nome}</td>
+                                    <td>{todos_medicos.crm}</td>
+                                    <td>{todos_medicos.endereco}</td>
+                                    <td>{todos_medicos.telefone}</td>
+                                    <td>{todos_medicos.idEspecialidadeNavigation.nome}</td>
+                                    {/* Esse comando permite exibir o nome da especialidade em vez do número. Só funciona se
+                                    usar o Include no arquivo do repositório no backend */}
                                 </tr>
                             );
                         })
@@ -87,15 +89,3 @@ class MedicosListar extends Component
 }
 
 export default MedicosListar;
-
-/*
-"id": 2,
-        "nome": "Roberto Possarle",
-        "crm": "53452-SP",
-        "endereco": "Av. Barão Limeira, 532, São Paulo, SP",
-        "telefone": "-",
-        "idUsuario": 4,
-        "idEspecialidade": 17,
-        "idClinica": 1,
-        "consultas": []
-*/

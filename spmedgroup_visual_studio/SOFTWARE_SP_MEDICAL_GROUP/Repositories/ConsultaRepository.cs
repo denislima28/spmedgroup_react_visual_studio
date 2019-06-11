@@ -67,6 +67,7 @@ namespace SOFTWARE_SP_MEDICAL_GROUP.Repositories
                 if (tipousuario == "ADM")
                 {
                     return ctx.Consultas.Include(x => x.IdMedicoNavigation).Include(x => x.IdProntuarioPacienteNavigation).ToList();
+                    //O include é necessário para que o sistema mostre os nomes do paciente e do médico em vez dos ids deles.
                 }
 
                 if (tipousuario == "Medico")

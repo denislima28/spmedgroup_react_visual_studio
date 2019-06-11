@@ -5,8 +5,11 @@ import App from './pages/Home_Login/App';
 import PainelAdm from './pages/PainelAdm/PainelAdm';
 import UsuariosListar from './pages/PainelAdm/Listar/UsuariosListar';
 import ConsultasListar from './pages/PainelAdm/Listar/ConsultasListar';
+import MedicosListar from './pages/PainelAdm/Listar/MedicosListar';
+import ProntuariosPacientesListar from './pages/PainelAdm/Listar/ProntuariosPacientesListar';
 import UsuariosCadastrar from './pages/PainelAdm/Cadastrar/UsuariosCadastrar';
 import ConsultasCadastrar from './pages/PainelAdm/Cadastrar/ConsultasCadastrar';
+import MedicosCadastrar from './pages/PainelAdm/Cadastrar/MedicosCadastrar';
 import Pacientes from './pages/Pacientes/Pacientes';
 import { usuarioAutenticado } from './services/auth';
 
@@ -33,8 +36,11 @@ const rotas = (
                 <Permissao path="/paineladm" component={PainelAdm} />
                 <Permissao path="/usuarioslistar" component={UsuariosListar} />
                 <Permissao path="/consultaslistar" component={ConsultasListar} />
+                <Permissao path="/medicoslistar" component={MedicosListar} />
+                <Permissao path="/prontuariospacienteslistar" component={ProntuariosPacientesListar} />
                 <Permissao path="/usuarioscadastrar" component={UsuariosCadastrar} />
                 <Permissao path="/consultascadastrar" component={ConsultasCadastrar} />
+                <Permissao path="/medicoscadastrar" component={MedicosCadastrar} />
                 <Permissao path="/pacientes" component={Pacientes} />
 
            </Switch>

@@ -5,7 +5,9 @@ using SOFTWARE_SP_MEDICAL_GROUP.Interfaces;
 using SOFTWARE_SP_MEDICAL_GROUP.Repositories;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace SOFTWARE_SP_MEDICAL_GROUP.Controllers
@@ -64,7 +66,10 @@ namespace SOFTWARE_SP_MEDICAL_GROUP.Controllers
         {
             try
             {
-                return Ok(MedicoRepository.ListarMedicos());
+                int idusuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                string tipousuario = (HttpContext.User.Claims.First(c => c.Type == ClaimTypes.Role).Value);
+
+                return Ok(MedicoRepository.ListarMedicos(idusuario, tipousuario));
             }
             catch (Exception ex)
             {

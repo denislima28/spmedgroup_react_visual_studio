@@ -18,7 +18,7 @@
     "SOFTWARE_SP_MEDICAL_GROUP": {
       "commandName": "Project",
       "launchBrowser": false,
-      "applicationUrl": "http://localhost:5000",
+      "applicationUrl": "http://192.168.3.70:5000", //Se for para o android, é preciso usar o ip do computador, não o localhost.
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

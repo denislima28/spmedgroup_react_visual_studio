@@ -17,7 +17,8 @@ class UsuariosCadastrar extends Component{
         };
     }
 
-    // usar o componentDidMount não funcionou aqui. Ao contrário, só fazia acontecer falsos negativos. Ou seja, barrava ações de usuários que deveriam ser autorizados.
+    // usar o componentDidMount não funcionou aqui. Ao contrário, só fazia acontecer falsos negativos. 
+    //Ou seja, barrava ações de usuários que deveriam ser autorizados.
 
     atualizaEstadoEmail(event){
         this.setState({ email: event.target.value });
@@ -40,7 +41,7 @@ class UsuariosCadastrar extends Component{
             idTipoUsario: this.state.idTipoUsario
         };
 
-        Axios.post('http://localhost:5000/api/usuarios', usuarios,
+        Axios.post('http://192.168.3.70:5000/api/usuarios', usuarios,
         {
             headers: {
               'Content-Type': 'application/json',
@@ -51,6 +52,7 @@ class UsuariosCadastrar extends Component{
         .then(res => {
             let usuarios = res.data;
             this.setState({ lista_usuarios : usuarios});
+            alert("Usuário cadastrado");
         })  
         
         console.log(usuarios);
@@ -60,16 +62,16 @@ class UsuariosCadastrar extends Component{
 
     render () {
         return (
-            <main className="consultas_cadastrar">
-                <div className="consultas_cadastrar_logotipo">
+            <main className="usuarios_cadastrar">
+                <div className="usuarios_cadastrar_logotipo">
                     <img src={logotipo} />
                 </div>
         
                 <h1>Painel do Administrador</h1>
 
-                <div className="formulario_cadastrar_consultas">
+                <div className="formulario_usuarios_consultas">
                     <form onSubmit={this.cadastrarUsuarios.bind(this)}>
-                        <div className="margens_cadastrar_consultas">
+                        <div className="margens_usuarios_consultas">
                             <input 
                             placeholder="Digite o e-mail do usuário" required              
                             type="email" 
@@ -79,7 +81,7 @@ class UsuariosCadastrar extends Component{
                             id="email"/>
                         </div>
                         
-                        <div className="margens_cadastrar_consultas">
+                        <div className="margens_usuarios_consultas">
                             <input 
                             placeholder="Digite a senha do usuário" required              
                             type="password" 
@@ -89,14 +91,14 @@ class UsuariosCadastrar extends Component{
                             id="senha"/>
                         </div>
 
-                        <div className="margens_cadastrar_consultas">
+                        <div className="margens_usuarios_consultas">
                             <select
                             id="opcao_usuario"
                             value={this.state.idMedico}
                             onChange={this.atualizaEstadoIdTipoUsario.bind(this)} required>
                                 <option>Selecione o tipo de usuário</option>
                                 <option value="1">ADM</option>
-                                <option value="2">Medico</option>
+                                <option value="2">Médico</option>
                                 <option value="3">Paciente</option>
                             </select>       
                         </div>

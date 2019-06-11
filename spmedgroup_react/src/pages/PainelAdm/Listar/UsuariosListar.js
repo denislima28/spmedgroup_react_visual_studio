@@ -16,7 +16,7 @@ class UsuariosListar extends Component
     
     
     buscarUsuarios (){
-        Axios.get('http://localhost:5000/api/usuarios',
+        Axios.get('http://192.168.3.70:5000/api/usuarios',
         {
             headers: {
               'Content-Type': 'application/json',

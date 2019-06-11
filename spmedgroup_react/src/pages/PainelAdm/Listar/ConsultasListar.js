@@ -15,7 +15,7 @@ class ConsultasListar extends Component
     
     
     buscarConsultas (){
-        Axios.get('http://localhost:5000/api/consultas',
+        Axios.get('http://192.168.3.70:5000/api/consultas',
         {
             headers: {
               'Content-Type': 'application/json',
@@ -44,6 +44,9 @@ class ConsultasListar extends Component
     
             <h1>Painel do Administrador</h1>
 
+            O médico não consegue ver as próprias consultas por causa da configuração da tabela no front-end.
+            Isso deve ser consertado.
+
             <div>
             
                 <table id="lista_consultas">
@@ -69,6 +72,8 @@ class ConsultasListar extends Component
                                     <td>{todas_consultas.descricao}</td>
                                     <td>{todas_consultas.idMedicoNavigation.nome}</td>
                                     <td>{todas_consultas.idProntuarioPacienteNavigation.nome}</td>
+                                     {/* Os dois últimos comandos permitem exibir os nomes do médico e do paciente
+                                     em vez dos ids. Só funciona se usar o Include no arquivo do repositório no backend */}
                                 </tr>
                             );
                         })

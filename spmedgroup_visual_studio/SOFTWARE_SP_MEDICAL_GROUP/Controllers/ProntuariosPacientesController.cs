@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -65,7 +67,10 @@ namespace SOFTWARE_SP_MEDICAL_GROUP.Controllers
         {
             try
             {
-                return Ok(ProntuarioPacienteRepository.ListarProntuariosPacientes());
+                int idusuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                string tipousuario = (HttpContext.User.Claims.First(c => c.Type == ClaimTypes.Role).Value);
+
+                return Ok(ProntuarioPacienteRepository.ListarProntuariosPacientes(idusuario, tipousuario));
             }
             catch (Exception ex)
             {
