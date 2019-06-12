@@ -1,3 +1,5 @@
+Cada página js tem uma css correspondente. Isso foi feito porque o projeto buga se houver apenas uma página css para várias js.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
