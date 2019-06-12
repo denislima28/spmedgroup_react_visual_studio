@@ -37,7 +37,7 @@ class PainelAdm extends Component{
                         <nav className="submenus">
                             <ul>
                                 <li><Link to="/ConsultasCadastrar">CONSULTAS</Link></li>
-                                <li><Link to="#">PACIENTES</Link></li>
+                                <li><Link to="/ProntuariosPacientesCadastrar">PACIENTES</Link></li>
                                 <li><Link to="/UsuariosCadastrar">USUÁRIOS</Link></li>
                                 <li><Link to="/MedicosCadastrar">MÉDICOS</Link></li>
                             </ul>

@@ -10,6 +10,7 @@ import ProntuariosPacientesListar from './pages/PainelAdm/Listar/ProntuariosPaci
 import UsuariosCadastrar from './pages/PainelAdm/Cadastrar/UsuariosCadastrar';
 import ConsultasCadastrar from './pages/PainelAdm/Cadastrar/ConsultasCadastrar';
 import MedicosCadastrar from './pages/PainelAdm/Cadastrar/MedicosCadastrar';
+import ProntuariosPacientesCadastrar from './pages/PainelAdm/Cadastrar/ProntuariosPacientesCadastrar';
 import Pacientes from './pages/Pacientes/Pacientes';
 import { usuarioAutenticado } from './services/auth';
 
@@ -41,6 +42,7 @@ const rotas = (
                 <Permissao path="/usuarioscadastrar" component={UsuariosCadastrar} />
                 <Permissao path="/consultascadastrar" component={ConsultasCadastrar} />
                 <Permissao path="/medicoscadastrar" component={MedicosCadastrar} />
+                <Permissao path="/prontuariospacientescadastrar" component={ProntuariosPacientesCadastrar} />
                 <Permissao path="/pacientes" component={Pacientes} />
 
            </Switch>

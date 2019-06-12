@@ -22,31 +22,31 @@ class MedicosCadastrar extends Component{
     }
 
     atualizaEstadoNome(event){
-        this.setState({ dataConsulta: event.target.value });
+        this.setState({ nome: event.target.value });
     }
 
     atualizaEstadoCRM(event){
-        this.setState({ dataConsulta: event.target.value });
+        this.setState({ crm: event.target.value });
     }
 
     atualizaEstadoEndereco(event){
-        this.setState({ dataConsulta: event.target.value });
+        this.setState({ endereco: event.target.value });
     }
 
     atualizaEstadoTelefone(event){
-        this.setState({ dataConsulta: event.target.value });
+        this.setState({ telefone: event.target.value });
     }
 
     atualizaEstadoIdUsuario(event){
-        this.setState({ dataConsulta: event.target.value });
+        this.setState({ idUsuario: event.target.value });
     }
 
     atualizaEstadoIdEspecialidade(event){
-        this.setState({ dataConsulta: event.target.value });
+        this.setState({ idEspecialidade: event.target.value });
     }
 
     atualizaEstadoIdClinica(event){
-        this.setState({ dataConsulta: event.target.value });
+        this.setState({ idClinica: event.target.value });
     }
 
     cadastrarMedicos(event) {
@@ -75,7 +75,7 @@ class MedicosCadastrar extends Component{
         .then(res => {
             let medicos = res.data;
             this.setState({ lista_medicos : medicos});
-            alert("Médico cadastrada");
+            alert("Médico cadastrado");
         })
         .catch(erro => {
              console.log(erro);
@@ -97,7 +97,7 @@ class MedicosCadastrar extends Component{
                 <div className="formulario_cadastrar_medicos">
                     <form onSubmit={this.cadastrarMedicos.bind(this)}>
                         <div className="margens_cadastrar_medicos">
-                            Nome
+                            Nome  
                             <input
                             required
                             value={this.state.nome}
@@ -140,6 +140,7 @@ class MedicosCadastrar extends Component{
                             onChange={this.atualizaEstadoIdUsuario.bind(this)}
                             id="idusuario"/>
                         </div>
+                {/* Se colocar uma id que não exista na tabela de usuários, o cadastro não acontece. */}
 
                         <div className="margens_cadastrar_medicos">
                             IdEspecialidade
@@ -159,9 +160,9 @@ class MedicosCadastrar extends Component{
                             id="idclinica"/>
                         </div>
 
-
-                        <button type="submit" className="botao_cadastrar">CADASTRAR MÉDICO(A)</button>
-
+                        <div className="botao_cadastrar_medicos">
+                            <button type="submit" className="botao_cadastrar">CADASTRAR MÉDICO(A)</button>
+                        </div>
                     </form>
 
                 </div>

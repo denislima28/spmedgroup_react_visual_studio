@@ -44,8 +44,12 @@ class ConsultasListar extends Component
     
             <h1>Painel do Administrador</h1>
 
+            LISTA DE CONSULTAS
+
             O médico não consegue ver as próprias consultas por causa da configuração da tabela no front-end.
             Isso deve ser consertado.
+
+            
 
             <div>
             

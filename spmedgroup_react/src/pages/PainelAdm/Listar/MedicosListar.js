@@ -44,6 +44,8 @@ class MedicosListar extends Component
     
             <h1>Painel do Administrador</h1>
 
+            LISTA DE MÉDICOS
+
             <div>
             
                 <table id="lista_medicos">

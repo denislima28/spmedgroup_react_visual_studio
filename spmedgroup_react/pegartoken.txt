@@ -2,7 +2,7 @@ efetuaLogin(event)
     {
       event.preventDefault();
 
-      Axios.post('http://localhost:5000/api/login',
+      Axios.post('http://192.168.3.70:5000/api/login',
         {
           email : this.state.email,
           senha : this.state.senha
@@ -11,10 +11,10 @@ efetuaLogin(event)
           if(data.status === 200){
               console.log(data);
               localStorage.setItem("usuario_spmedgroup", data.data.token);
-              //Verifica o tipo de usuário e redireciona para a página default
+              //Verifica o tipo de usuï¿½rio e redireciona para a pï¿½gina default
               console.log(parseJwt().Role);
               if(parseJwt().Role == "ADM"){
-                this.props.history.push("/paineladm"); //assim que o login for feito, redireciona para outra página
+                this.props.history.push("/paineladm"); //assim que o login for feito, redireciona para outra pï¿½gina
                 console.log(data);
               } else {
                 this.props.history.push("/clientes");
@@ -23,14 +23,14 @@ efetuaLogin(event)
           } 
       })
       .catch(erro => {
-          this.setState({ erroMensagem : 'Email ou senha inválido'});
+          this.setState({ erroMensagem : 'Email ou senha invï¿½lido'});
       })
 	}
 
 
 
 
-//ASSIM, O LOGIN É FEITO
+//ASSIM, O LOGIN ï¿½ FEITO
 
 efetuaLogin(event)
     {
@@ -42,8 +42,8 @@ efetuaLogin(event)
           senha : this.state.senha
         })
         .then(data =>{
-          localStorage.setItem("usuario_spmedgroup", data.data.token); //armazena informações, dos visitantes, que serão utilizadas posteriormente. Por exemplo, as buscas feitas no site
-          this.props.history.push('/paineladm'); //assim que o login for feito, redireciona para outra página
+          localStorage.setItem("usuario_spmedgroup", data.data.token); //armazena informaï¿½ï¿½es, dos visitantes, que serï¿½o utilizadas posteriormente. Por exemplo, as buscas feitas no site
+          this.props.history.push('/paineladm'); //assim que o login for feito, redireciona para outra pï¿½gina
           console.log(data);
         })
         // .catch(erro => {
@@ -78,8 +78,8 @@ efetuaLogin(event)
         }
         )
         .then(data =>{
-          localStorage.setItem("usuario_spmedgroup", data.data.token); //armazena informações, dos visitantes, que serão utilizadas posteriormente. Por exemplo, as buscas feitas no site
-          this.props.history.push('/paineladm'); //assim que o login for feito, redireciona para outra página
+          localStorage.setItem("usuario_spmedgroup", data.data.token); //armazena informaï¿½ï¿½es, dos visitantes, que serï¿½o utilizadas posteriormente. Por exemplo, as buscas feitas no site
+          this.props.history.push('/paineladm'); //assim que o login for feito, redireciona para outra pï¿½gina
           console.log(data);
         })
         // .catch(erro => {
@@ -90,7 +90,7 @@ efetuaLogin(event)
 
 
 
-ISSO PODE SER ÚTIL PARA PEGAR O TOKEN
+ISSO PODE SER ï¿½TIL PARA PEGAR O TOKEN
 
 gerarToken(event) {
     event.preventDefault();
@@ -102,7 +102,7 @@ gerarToken(event) {
     console.log(_senha);
 
     Axios.post(
-      "http://localhost:5000/api/login",
+      "http://192.168.3.70:5000/api/login",
       {
         email: _email,
         senha: _senha

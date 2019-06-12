@@ -45,6 +45,8 @@ class UsuariosListar extends Component
     
             <h1>Painel do Administrador</h1>
 
+            LISTA DE USUÁRIOS
+
             <div>
             
                 <table id="lista_usuarios">

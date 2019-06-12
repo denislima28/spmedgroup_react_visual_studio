@@ -44,6 +44,9 @@ class ProntuariosPacientesListar extends Component
     
             <h1>Painel do Administrador</h1>
 
+
+            LISTA DE PACIENTES
+
             <div>
             
                 <table id="lista_prontuariospacientes">

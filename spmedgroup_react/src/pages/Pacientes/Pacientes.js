@@ -11,7 +11,7 @@ class Pacientes extends Component{
                     <img src={logotipo} />
                 </div>
 
-                <h1>Suas informações</h1>
+                <h1>PÁGINA FEITA PARA OS PACIENTES ACESSAREM</h1>
 
                 <button name="botao_paciente_sair">SAIR</button>
             </main>

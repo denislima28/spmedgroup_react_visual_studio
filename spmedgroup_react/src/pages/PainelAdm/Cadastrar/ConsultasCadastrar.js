@@ -111,6 +111,7 @@ class ConsultasCadastrar extends Component{
 
                         <div className="margens_cadastrar_consultas">
                             Médico    <input
+                            required
                             id="opcao_medico"
                             value={this.state.idMedico}
                             onChange={this.atualizaEstadoIdMedico.bind(this)} required>
@@ -119,6 +120,7 @@ class ConsultasCadastrar extends Component{
                         
                         <div className="margens_cadastrar_consultas">
                             Paciente    <input
+                            required
                             id="opcao_paciente"
                             value={this.state.idProntuarioPaciente}
                             onChange={this.atualizaEstadoIdProntuarioPaciente.bind(this)} required>
