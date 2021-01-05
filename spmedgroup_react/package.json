@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "decode": "^0.3.0",
     "jose-jwe-jws": "^0.1.7",
     "jsonwebtoken": "^8.5.1",
